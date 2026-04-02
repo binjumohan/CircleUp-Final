@@ -165,7 +165,7 @@ const Events = () => {
             eventName={e.eventName}
             description={e.description}
             venue={e.venue}
-            image={`http://localhost:5000${e.image}`} // ✅ FIXED
+            image={`https://circle-up-final-server.vercel.app/${e.image}`} // ✅ FIXED
             date={e.date}
             timeFrom={e.timeFrom}
             timeTo={e.timeTo}
