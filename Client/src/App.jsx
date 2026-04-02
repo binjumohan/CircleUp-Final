@@ -15,7 +15,7 @@ import MyBookmarks from "./pages/MyBookmarks";
 import FloatingChatbot from "./pages/FloatingChatbot";
 import AuthProvider from "./hooks/AuthProvider";
 import AddEvent from "./pages/admin/AddEvent";
-import Chatbot from "./pages/ChatBoat";
+import Chatbot from "./pages/Chatboat";
 const App = () => {
   return (
     <AuthProvider>
