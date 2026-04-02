@@ -15,10 +15,12 @@ const chatRoutes = require("./routes/chatRoutes");
 const app = express();
 
 // middleware
-app.use(cors({
-  origin: "https://circle-up-final-client.vercel.app", // ⚠️ will fix below
-  credentials: true
-}));
+app.use(
+  cors({
+    origin: "https://circle-up-final-client.vercel.app",
+    credentials: true,
+  })
+);
 
 app.use(express.json());
 app.use(cookieParser());
