@@ -83,9 +83,7 @@ exports.addEvents = async (req, res) => {
     } = req.body;
 
     //  GET IMAGE FROM MULTER
-    const imageUrl = req.file
-      ? `/uploads/${req.file.filename}`
-      : null;
+   const imageUrl = req.file ? req.file.path : null;
 
     console.log("FILE:", req.file); 
     const newEvent = new Event({
@@ -159,7 +157,7 @@ exports.updateEvent = async (req, res) => {
 
     //  If new image uploaded
     if (req.file) {
-      updatedData.image = `/images/${req.file.filename}`;
+     updatedData.image = req.file.path;
     }
 
     const updatedEvent = await Event.findByIdAndUpdate(
