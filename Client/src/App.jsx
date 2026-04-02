@@ -14,7 +14,7 @@ import AdminUsers from "./pages/admin/AdminUsers";
 import MyBookmarks from "./pages/MyBookmarks";
 import FloatingChatbot from "./pages/FloatingChatbot";
 import AuthProvider from "./hooks/AuthProvider";
-import AddEvent from "./pages/admin/addEvent";
+import AddEvent from "./pages/admin/AddEvent";
 import Chatbot from "./pages/ChatBoat";
 const App = () => {
   return (
