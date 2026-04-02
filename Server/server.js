@@ -16,7 +16,7 @@ const app = express();
 
 // middleware
 app.use(cors({
-  origin: "http://localhost:5173", // ⚠️ will fix below
+  origin: "https://circle-up-final-client.vercel.app", // ⚠️ will fix below
   credentials: true
 }));
 
