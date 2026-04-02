@@ -62,10 +62,10 @@ const Navbar = () => {
       </li>
 
       <li>
-        <NavLink to="/calender" className={({ isActive }) =>
+        <NavLink to="/calendar" className={({ isActive }) =>
           isActive ? "text-black font-bold" : "hover:text-fuchsia-200 transition"
         }>
-          Calender
+          Calendar
         </NavLink>
       </li>
 

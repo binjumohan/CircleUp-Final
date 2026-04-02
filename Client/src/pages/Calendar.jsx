@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import API from "../services/api";
 
-const Calender = () => {
+const Calendar = () => {
   const [events, setEvents] = useState([]);
   const navigate = useNavigate();
 
@@ -142,4 +142,4 @@ const Calender = () => {
   );
 };
 
-export default Calender;
+export default Calendar;
