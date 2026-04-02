@@ -153,7 +153,7 @@ const handleBookmark = async () => {
           {/* Image */}
           <div className="relative rounded-2xl overflow-hidden border border-yellow-600 shadow-lg">
             <img
-              src={`http://localhost:5000${event.image}`}
+              src={`https://circle-up-final-server.vercel.app/${event.image}`}
               alt={event.eventName}
               className="w-full h-full object-cover"
             />
