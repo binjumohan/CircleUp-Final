@@ -6,7 +6,7 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Events from "./pages/Events";
 import Login from "./pages/Login";
-import SignUp from "./pages/signUp";
+import SignUp from "./pages/SignUp";
 import Calender from "./pages/Calender";
 import Map from "./pages/Map";
 import EventDetails from "./pages/EventDetails";
