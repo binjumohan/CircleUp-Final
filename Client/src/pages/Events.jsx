@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import API from "../services/api";
 import Event from "./Event";
-const BASE_URL = import.meta.env.VITE_API_URL.replace("/api", "");
+// const BASE_URL = import.meta.env.VITE_API_URL.replace("/api", "");
 
 const Events = () => {
   const [events, setEvents] = useState([]);
@@ -78,71 +78,68 @@ const Events = () => {
       </h1>
 
       {/* Filters */}
-      <div className="max-w-3xl mx-auto bg-gray-900 border border-yellow-600
-        rounded-xl p-5 mb-10 space-y-4">
+      <div className="max-w-6xl mx-auto mb-10">
+  <div className="bg-slate-800 rounded-2xl p-5 flex flex-col lg:flex-row gap-4 items-center justify-between shadow-md">
 
-        <div className="flex flex-col md:flex-row gap-4 items-center">
-          <label className="text-yellow-400 font-semibold w-sm">
-            Filter by
-          </label>
+    {/* LEFT SIDE - FILTERS */}
+    <div className="flex flex-wrap gap-3 w-full lg:w-auto">
 
-          <select
-            className="bg-black border border-yellow-500 rounded-lg px-4 py-2 w-full"
-            onChange={(e) => {
-              setSearchBy(e.target.value);
-              setLocation("");
-              setPrice("");
-              setStartDate("");
-              setEndDate("");
-            }}
-          >
-            <option value="">Select</option>
-            <option value="price">Price</option>
-            <option value="date">Date Range</option>
-            <option value="location">Location</option>
-          </select>
-        </div>
+      {/* Search */}
+      <input
+        type="text"
+        placeholder="Search events..."
+        className="px-4 py-2 rounded-lg bg-slate-700 text-white placeholder-gray-400 focus:outline-none"
+        onChange={(e) => setSearch(e.target.value)}
+      />
 
-        {/* Price Filter */}
-        {searchBy === "price" && (
-          <select
-            className="w-full bg-black border border-yellow-500 rounded-lg px-4 py-2"
-            onChange={(e) => setPrice(e.target.value)}
-          >
-            <option value="">All Prices</option>
-            <option value="Free">Free</option>
-            <option value="Paid">Paid</option>
-          </select>
-        )}
+      {/* Location */}
+      <input
+        type="text"
+        placeholder="Location"
+        className="px-4 py-2 rounded-lg bg-slate-700 text-white placeholder-gray-400 focus:outline-none"
+        onChange={(e) => setLocation(e.target.value)}
+      />
 
-        {/* Location Filter */}
-        {searchBy === "location" && (
-          <input
-            type="text"
-            placeholder="Enter location"
-            className="w-full bg-black border border-yellow-500 rounded-lg px-4 py-2"
-            onChange={(e) => setLocation(e.target.value)}
-          />
-        )}
+      {/* Price */}
+      <select
+        className="px-4 py-2 rounded-lg bg-slate-700 text-white"
+        onChange={(e) => setPrice(e.target.value)}
+      >
+        <option value="">All Prices</option>
+        <option value="Free">Free</option>
+        <option value="Paid">Paid</option>
+      </select>
 
-        {/* Date Filter */}
-        {searchBy === "date" && (
-          <div className="flex items-center gap-3 flex-wrap">
-            <label>From</label>
-            <input
-              type="date"
-              className="bg-white border border-yellow-500 rounded-lg px-2 py-2 text-black"
-              onChange={(e) => setStartDate(e.target.value)}
-            />
-            <label>To</label>
-            <input
-              type="date"
-              className="bg-white border border-yellow-500 rounded-lg px-4 py-2 text-black"
-              onChange={(e) => setEndDate(e.target.value)}
-            />
-          </div>
-        )}
-      </div>
+      {/* Start Date */}
+      <input
+        type="date"
+        className="px-3 py-2 rounded-lg bg-slate-700 text-white"
+        onChange={(e) => setStartDate(e.target.value)}
+      />
+
+      {/* End Date */}
+      <input
+        type="date"
+        className="px-3 py-2 rounded-lg bg-slate-700 text-white"
+        onChange={(e) => setEndDate(e.target.value)}
+      />
+    </div>
+
+    {/* RIGHT SIDE - CLEAR BUTTON */}
+    <button
+      onClick={() => {
+        setSearch("");
+        setLocation("");
+        setPrice("");
+        setStartDate("");
+        setEndDate("");
+      }}
+      className="bg-yellow-400 text-black px-4 py-2 rounded-lg font-semibold hover:bg-yellow-300"
+    >
+      Clear
+    </button>
+  </div>
+</div>
 
       {/* Search */}
       <div className="flex justify-end mb-6">
