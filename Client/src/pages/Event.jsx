@@ -25,7 +25,7 @@ const Event = ({
       {/* Image */}
       <div className="relative h-48 overflow-hidden">
         <img
-          src={`${BASE_URL}${image}`}
+          src={`${BASE_URL}/${image}`}
           alt={eventName}
         
           className="w-full h-full object-cover hover:scale-105 transition duration-300"

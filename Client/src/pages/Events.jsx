@@ -166,7 +166,7 @@ const Events = () => {
             eventName={e.eventName}
             description={e.description}
             venue={e.venue}
-            image={`${BASE_URL}/${e.image}`}
+            image={e.image}
             date={e.date}
             timeFrom={e.timeFrom}
             timeTo={e.timeTo}
