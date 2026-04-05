@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+const BASE_URL = import.meta.env.VITE_API_URL.replace("/api", "");
 const Event = ({
   id,
   eventName,
@@ -23,8 +23,11 @@ const Event = ({
       {/* Image */}
       <div className="relative h-48 overflow-hidden">
         <img
-          src={image}
+          src={`${BASE_URL}${image}`}
           alt={eventName}
+          onError={(e) => {
+            e.target.src = "https://via.placeholder.com/400x300?text=No+Image";
+          }}
           className="w-full h-full object-cover hover:scale-105 transition duration-300"
         />
 
@@ -58,10 +61,10 @@ const Event = ({
         {/* Price */}
         <p className="text-sm font-semibold text-yellow-300">
           {/* 💰 {price === 0 ? "Free" : `₹${price}`} */}
-           <span>📍 {venue}</span>
+          <span>📍 {venue}</span>
         </p>
 
-        
+
 
         {/* Footer */}
         <div className="pt-4 border-t border-yellow-700 flex justify-between items-center">

@@ -40,7 +40,4 @@ app.use("/api/admin", adminRoutes);
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use("/api/bookmarks", bookMarkRoutes);
 app.use("/api", chatRoutes);
-
-// ❌ REMOVE app.listen
-// ✅ EXPORT instead
 module.exports = app;
