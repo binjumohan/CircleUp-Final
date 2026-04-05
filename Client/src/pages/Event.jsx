@@ -18,7 +18,7 @@ const Event = ({
     <div
       className="bg-gray-900 border border-yellow-600 rounded-2xl
       overflow-hidden shadow-lg hover:shadow-yellow-600/30
-      transform hover:-translate-y-2 transition duration-300"
+      transform hover:-translate-y-2 transition duration-300 pt-20"
     >
       {/* Image */}
       <div className="relative h-48 overflow-hidden">
