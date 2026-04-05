@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-const BASE_URL = import.meta.env.VITE_API_URL.replace("/api", "");
+const BASE_URL = import.meta.env.VITE_API_URL
+  ? import.meta.env.VITE_API_URL.replace("/api", "")
+  : "";
 const Event = ({
   id,
   eventName,
@@ -25,9 +27,7 @@ const Event = ({
         <img
           src={`${BASE_URL}${image}`}
           alt={eventName}
-          onError={(e) => {
-            e.target.src = "https://via.placeholder.com/400x300?text=No+Image";
-          }}
+        
           className="w-full h-full object-cover hover:scale-105 transition duration-300"
         />
 

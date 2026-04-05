@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import API from "../services/api";
 import Event from "./Event";
+const BASE_URL = import.meta.env.VITE_API_URL.replace("/api", "");
 
 const Events = () => {
   const [events, setEvents] = useState([]);
