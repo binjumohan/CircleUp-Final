@@ -37,7 +37,7 @@ const Navbar = () => {
       </Link>
 
 
-//Hamburger menu
+{/* Hamburger menu */}
       <button
   className="md:hidden text-3xl"
   onClick={() => setMenuOpen(!menuOpen)}

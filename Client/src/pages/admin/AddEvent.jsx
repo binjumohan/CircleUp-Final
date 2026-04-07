@@ -31,7 +31,7 @@ const AddEvent = () => {
   try {
     const data = new FormData();
 
-    // append only text fields
+    // append only text 
     Object.keys(formData).forEach((key) => {
       data.append(key, formData[key]);
     });
@@ -40,8 +40,12 @@ const AddEvent = () => {
     if (imageFile) {
       data.append("image", imageFile); // ✅ correct
     }
-
-    await API.post("/admin/events", data);
+const token = localStorage.getItem("token");
+   await API.post("/admin/events", data, {
+  headers: {
+    Authorization: `Bearer ${token}`,
+  },
+});
 
     alert("Event Added Successfully ✅");
     navigate("/admin/events");
