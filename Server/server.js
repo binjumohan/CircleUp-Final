@@ -16,14 +16,22 @@ const chatRoutes = require("./routes/chatRoutes");
 const app = express();
 
 // middleware
-app.use(
-  cors({
-    origin: "https://circle-up-final-client.vercel.app",
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-    credentials: true,
-  })
-);
+
+const corsOptions = {
+  origin: "https://circle-up-final-client.vercel.app",
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
+app.options("*", cors(corsOptions));
+
+app.use(cors({
+  origin: "https://circle-up-final-client.vercel.app",
+  credentials: true,
+}));
+
 app.options("*", cors());
 
 app.use(express.json());
