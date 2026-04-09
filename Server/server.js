@@ -25,14 +25,12 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
+app.options("*", cors(corsOptions)); // ✅ FIXED
 
 
-app.use(cors({
-  origin: "https://circle-up-final-client.vercel.app",
-  credentials: true,
-}));
 
-// app.options("/", cors());
+
+ app.options("/", cors());
 
 app.use(express.json());
 app.use(cookieParser());
@@ -51,4 +49,7 @@ app.use("/api/admin", adminRoutes);
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use("/api/bookmarks", bookMarkRoutes);
 app.use("/api", chatRoutes);
-module.exports = app;
+
+module.exports = (req, res) => {
+  app(req, res);
+};
